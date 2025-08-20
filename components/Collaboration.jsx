@@ -36,10 +36,10 @@ const FeatureItem = ({ title }) => (
 // Collaboration features array
 const CollaborationFeatures = [
   {
-    title: "AI-Powered Code Generation & Automation",
+    title: "AI-Powered Code Generation",
   },
   {
-    title: "Full-Stack Development with Modern Frameworks",
+    title: "Full-Stack Development ",
   },
   {
     title: "Custom Digital Transformation Solutions",
