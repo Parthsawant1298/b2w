@@ -65,7 +65,7 @@ const Collaboration = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 relative z-10 max-w-7xl">
         <div className="lg:flex items-start gap-6 lg:gap-8 xl:gap-16">
           {/* Left Content Section */}
-          <div className="max-w-full lg:max-w-[34rem] flex-shrink-0 mb-8 sm:mb-10 lg:mb-0">
+          <div className="max-w-full lg:max-w-[34rem] flex-shrink-0 mb-8 sm:mb-10 lg:mb-0 text-center lg:text-left">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-6 sm:mb-8 md:mb-12 leading-tight text-white">
               Platform for <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">AI-Powered Development</span> Excellence
             </h2>
@@ -80,37 +80,39 @@ const Collaboration = () => {
             </ul>
 
             {/* Button with gradient matching the image */}
-            <InlineButton
-              className="
-                w-auto 
-                bg-gradient-to-r
-                from-purple-600
-                to-pink-600
-                text-white
-                hover:from-purple-700
-                hover:to-pink-700
-                border-none
-                shadow-lg
-                shadow-purple-500/25
-                border
-                border-purple-400/30
-                text-xs sm:text-sm
-                px-4 sm:px-6
-                py-2 sm:py-3
-              "
-            >
+            <div className="flex justify-center lg:justify-start">
+              <InlineButton
+                className="
+                  w-auto 
+                  bg-gradient-to-r
+                  from-purple-600
+                  to-pink-600
+                  text-white
+                  hover:from-purple-700
+                  hover:to-pink-700
+                  border-none
+                  shadow-lg
+                  shadow-purple-500/25
+                  border
+                  border-purple-400/30
+                  text-xs sm:text-sm
+                  px-4 sm:px-6
+                  py-2 sm:py-3
+                "
+              >
               START AI DEVELOPMENT
-            </InlineButton>
+              </InlineButton>
+            </div>
           </div>
 
           {/* Right Visual Section */}
-          <div className="lg:flex-1">
+          <div className="lg:flex-1 text-center lg:text-left">
             <p className="text-gray-300 mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 lg:max-w-[34rem] lg:mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
               Empowering businesses of all sizes to accelerate digital transformation 
             </p>
 
             {/* Circular Integration Diagram */}
-            <div className="relative mx-auto flex w-[14rem] sm:w-[16rem] md:w-[18rem] lg:w-[20rem] xl:w-[22rem] aspect-square border border-purple-500/30 rounded-full">
+            <div className="relative mx-auto flex w-[14rem] sm:w-[16rem] md:w-[18rem] lg:w-[20rem] xl:w-[22rem] aspect-square border border-purple-500/30 rounded-full mt-8 lg:mt-0">
               {/* Central Brain Symbol */}
               <div className="flex w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52 aspect-square m-auto border border-purple-500/30 rounded-full">
                 <div className="w-12 sm:w-14 md:w-16 lg:w-20 xl:w-24 aspect-square m-auto bg-gradient-to-r from-purple-600 to-pink-600 p-0.5 rounded-full">
