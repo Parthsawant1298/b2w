@@ -42,13 +42,13 @@ const CollaborationFeatures = [
     title: "Full-Stack Development ",
   },
   {
-    title: "Custom Digital Transformation Solutions",
+    title: "Custom Digital Solutions",
   },
   {
-    title: "Enterprise AI/ML Integration Services",
+    title: "Enterprise AI/ML Services",
   },
   {
-    title: "24/7 Dedicated Technical Support",
+    title: "24/7 Dedicated Support",
   },
 ];
 
