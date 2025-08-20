@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { Brain, Mail, Phone, MapPin, Linkedin, Twitter, Github, Globe, ArrowRight } from "lucide-react"
+import { Brain, Mail, Phone, MapPin, Linkedin, Twitter, Github, Globe } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="space-y-6">
               <div className="flex items-center space-x-3">
                 <img 
-                  src="/logo.png" 
+                  src="/images/logo.jpg" 
                   alt="B2W Infotech Logo" 
                   className="h-8 w-8 object-contain"
                   onError={(e) => {
@@ -63,9 +63,8 @@ export default function Footer() {
                   <li key={index}>
                     <Link 
                       href="#" 
-                      className="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm flex items-center group"
+                      className="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm"
                     >
-                      <ArrowRight size={14} className="mr-2 text-purple-500/50 group-hover:text-purple-400 group-hover:translate-x-1 transition-all duration-200" />
                       {service}
                     </Link>
                   </li>
@@ -92,9 +91,8 @@ export default function Footer() {
                   <li key={index}>
                     <Link 
                       href={item.href} 
-                      className="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm flex items-center group"
+                      className="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm"
                     >
-                      <ArrowRight size={14} className="mr-2 text-purple-500/50 group-hover:text-purple-400 group-hover:translate-x-1 transition-all duration-200" />
                       {item.name}
                     </Link>
                   </li>

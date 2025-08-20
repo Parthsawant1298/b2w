@@ -29,26 +29,26 @@ export default function CTASection() {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/20 to-black/80" />
       
-      <main className="relative z-10 flex items-center justify-center px-4 py-16 lg:py-24">
+      <main className="relative z-10 flex items-center justify-center px-4 py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="text-center max-w-4xl mx-auto">
          
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white leading-tight">
             Ready to Revolutionize Your <br />
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Development Process?
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0">
             Join 1200+ companies worldwide using our AI-powered development solutions for faster delivery, 
             smarter processes, and revolutionary digital transformation.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg shadow-purple-500/25 border border-purple-400/30">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10 md:mb-12">
+            <button className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg shadow-purple-500/25 border border-purple-400/30">
               Start AI Development
               <svg
-                className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
+                className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -62,10 +62,10 @@ export default function CTASection() {
               </svg>
             </button>
             
-            <button className="group inline-flex items-center px-8 py-4 bg-black/20 backdrop-blur-xl border border-purple-500/30 hover:border-purple-400/50 hover:bg-purple-500/20 text-white text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+            <button className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-black/20 backdrop-blur-xl border border-purple-500/30 hover:border-purple-400/50 hover:bg-purple-500/20 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
               Get Free Consultation
               <svg
-                className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-200"
+                className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:scale-110 transition-transform duration-200"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

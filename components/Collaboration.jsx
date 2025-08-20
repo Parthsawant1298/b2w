@@ -145,7 +145,7 @@ const Collaboration = () => {
                             className="m-auto transform hover:scale-110 transition-transform"
                             width={app.width || 16}
                             height={app.height || 16}
-                            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                            
                             alt={app.title || `App ${index + 1}`}
                             src={app.icon || `/images/app-icon-${index + 1}.svg`}
                           />
