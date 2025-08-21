@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="space-y-6">
               <div className="flex items-center space-x-3">
                 <img 
-                  src="/images/logo.jpg" 
+                  src="/images/logo.png" 
                   alt="B2W Infotech Logo" 
                   className="h-8 w-8 object-contain"
                   onError={(e) => {

@@ -134,7 +134,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <img 
-              src="/images/logo.jpg" 
+              src="/images/logo.png" 
               alt="B2W Infotech Logo" 
               className="h-8 w-8 object-contain"
               onError={(e) => {
