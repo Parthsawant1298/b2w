@@ -58,7 +58,7 @@ export default function HeroSlug({ service }) {
   const currentService = service || defaultService
 
   return (
-    <div className="bg-black min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden">
+    <div className="bg-black min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden pt-20 sm:pt-24 md:pt-16">
 
       {/* Background Video or Image Carousel */}
       {backgroundType === 'video' ? (

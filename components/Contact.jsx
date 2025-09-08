@@ -58,7 +58,7 @@ export default function ContactPage() {
     <div className="min-h-screen relative overflow-hidden" style={{backgroundColor: '#FFFFFF'}}>
 
       {/* Hero Section */}
-      <section className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[625px] overflow-hidden">
+      <section className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[625px] overflow-hidden pt-16 sm:pt-20 md:pt-16">
         {/* Background Video or Image Carousel */}
         {backgroundType === 'video' ? (
           <div className="absolute inset-0 z-0">

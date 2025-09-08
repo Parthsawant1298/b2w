@@ -49,7 +49,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="bg-black min-h-[70vh] sm:min-h-[80vh] md:min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden">
+    <div className="bg-black min-h-[70vh] sm:min-h-[80vh] md:min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden pt-20 sm:pt-24 md:pt-20">
 
       {/* Background Video or Image Carousel */}
       {backgroundType === 'video' ? (

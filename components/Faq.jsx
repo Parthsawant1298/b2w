@@ -161,7 +161,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen relative overflow-hidden" style={{backgroundColor: '#FFFFFF'}}>
       {/* Hero Section */}
-      <section className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[625px] overflow-hidden">
+      <section className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[625px] overflow-hidden pt-16 sm:pt-20 md:pt-16">
         {/* Background Video or Image Carousel */}
         {backgroundType === 'video' ? (
           <div className="absolute inset-0 z-0">
