@@ -144,20 +144,30 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="bg-black min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 relative z-10"></div>
+      <div className="bg-white min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="rgb(148 163 184 / 0.05)"><path d="m0 .5 32 32M32 .5 0 32"/></svg>')}")`
+          }}></div>
+        </div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-800 relative z-10"></div>
       </div>
     );
   }
 
   if (!user) {
     return (
-      <div className="bg-black min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="bg-white min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="rgb(148 163 184 / 0.05)"><path d="m0 .5 32 32M32 .5 0 32"/></svg>')}")`
+          }}></div>
+        </div>
         <div className="text-center relative z-10">
-          <h1 className="text-2xl font-semibold text-white mb-4">Not authenticated</h1>
+          <h1 className="text-2xl font-semibold text-gray-900 mb-4">Not authenticated</h1>
           <button 
             onClick={() => router.push('/login')}
-            className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-2 rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/25 border border-blue-400/30"
+            className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded-lg transition-all duration-200 shadow-lg"
           >
             Go to Login
           </button>
@@ -167,15 +177,22 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="bg-black min-h-screen relative overflow-hidden">
+    <div className="bg-white min-h-screen relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: `url("data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="rgb(148 163 184 / 0.05)"><path d="m0 .5 32 32M32 .5 0 32"/></svg>')}")`
+        }}></div>
+      </div>
+
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-xl border-b border-blue-500/30 relative z-10">
+      <div className="bg-white/80 backdrop-blur-xl border-b border-gray-200 relative z-10 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
                 <img 
-                  src="/images/logo.png" 
+                  src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80" 
                   alt="B2W Infotech Logo" 
                   className="h-8 w-8 object-contain"
                   onError={(e) => {
@@ -183,17 +200,17 @@ export default function ProfilePage() {
                     e.target.nextElementSibling.style.display = 'block';
                   }}
                 />
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center hidden">
+                <div className="w-8 h-8 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg flex items-center justify-center hidden">
                   <span className="text-white font-bold text-sm">B2W</span>
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">B2W Infotech</span>
+                <span className="text-xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">B2W Infotech</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-300">Welcome, {user.name?.split(' ')[0]}</span>
+              <span className="text-sm text-gray-700">Welcome, {user.name?.split(' ')[0]}</span>
               <button 
                 onClick={handleLogout}
-                className="flex items-center space-x-2 text-gray-300 hover:text-red-400 transition-colors"
+                className="flex items-center space-x-2 text-gray-600 hover:text-red-600 transition-colors"
               >
                 <LogOut className="w-4 h-4" />
                 <span className="text-sm">Logout</span>
@@ -209,7 +226,7 @@ export default function ProfilePage() {
         <div className="mb-8">
           <button 
             onClick={() => router.push('/')}
-            className="flex items-center space-x-2 text-blue-600 hover:text-blue-300 transition-colors"
+            className="flex items-center space-x-2 text-gray-700 hover:text-gray-900 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Dashboard</span>
@@ -217,9 +234,9 @@ export default function ProfilePage() {
         </div>
 
         {/* Profile Card */}
-        <div className="bg-black/20 backdrop-blur-xl rounded-xl shadow-xl border border-blue-500/30 overflow-hidden shadow-lg shadow-blue-500/10">
+        <div className="bg-white/80 backdrop-blur-xl rounded-xl shadow-xl border border-gray-200 overflow-hidden shadow-gray-200/50">
           {/* Profile Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-12">
+          <div className="bg-gradient-to-r from-gray-700 to-gray-900 px-8 py-12">
             <div className="flex flex-col items-center">
               {/* Profile Picture */}
               <div className="relative mb-6">
@@ -236,7 +253,7 @@ export default function ProfilePage() {
                     )}
                   </div>
                   {profileImage && (
-                    <div className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
+                    <div className="absolute -top-2 -right-2 bg-gray-600 text-white text-xs px-2 py-1 rounded-full">
                       New
                     </div>
                   )}
@@ -259,20 +276,20 @@ export default function ProfilePage() {
               </div>
 
               <h1 className="text-2xl font-bold text-white mb-2">{user.name}</h1>
-              <p className="text-blue-100">{user.email}</p>
+              <p className="text-gray-100">{user.email}</p>
             </div>
           </div>
 
           {/* Upload Controls */}
           {profileImage && (
-            <div className="px-8 py-4 bg-blue-500/10 border-b border-blue-500/30">
+            <div className="px-8 py-4 bg-gray-50 border-b border-gray-200">
               <div className="flex items-center justify-between">
-                <p className="text-sm text-blue-200">Ready to update your profile picture?</p>
+                <p className="text-sm text-gray-800">Ready to update your profile picture?</p>
                 <div className="flex space-x-3">
                   <button
                     onClick={handleCancelUpload}
                     disabled={uploading}
-                    className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-300 bg-black/20 border border-blue-500/30 rounded-lg hover:bg-blue-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors backdrop-blur-xl"
+                    className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
                     <X className="w-4 h-4" />
                     <span>Cancel</span>
@@ -280,7 +297,7 @@ export default function ProfilePage() {
                   <button
                     onClick={handleUpload}
                     disabled={uploading}
-                    className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-cyan-600 border border-transparent rounded-lg hover:from-blue-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg shadow-blue-500/25"
+                    className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-white bg-gray-800 border border-transparent rounded-lg hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg"
                   >
                     {uploading ? (
                       <>
@@ -301,8 +318,8 @@ export default function ProfilePage() {
 
           {/* Status Messages */}
           {error && (
-            <div className="px-8 py-4 bg-red-500/10 border-b border-red-400/30">
-              <div className="flex items-center space-x-2 text-red-400">
+            <div className="px-8 py-4 bg-red-50 border-b border-red-200">
+              <div className="flex items-center space-x-2 text-red-700">
                 <X className="w-5 h-5" />
                 <span className="text-sm">{error}</span>
               </div>
@@ -310,8 +327,8 @@ export default function ProfilePage() {
           )}
 
           {success && (
-            <div className="px-8 py-4 bg-green-500/10 border-b border-green-400/30">
-              <div className="flex items-center space-x-2 text-green-400">
+            <div className="px-8 py-4 bg-green-50 border-b border-green-200">
+              <div className="flex items-center space-x-2 text-green-700">
                 <Check className="w-5 h-5" />
                 <span className="text-sm">{success}</span>
               </div>
@@ -320,31 +337,31 @@ export default function ProfilePage() {
 
           {/* Profile Information */}
           <div className="px-8 py-8">
-            <h2 className="text-lg font-semibold text-white mb-6">Profile Information</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-6">Profile Information</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-1">
-                <div className="flex items-center space-x-2 text-sm text-gray-400 mb-1">
+                <div className="flex items-center space-x-2 text-sm text-gray-600 mb-1">
                   <User className="w-4 h-4" />
                   <span>Full Name</span>
                 </div>
-                <p className="text-white font-medium">{user.name}</p>
+                <p className="text-gray-900 font-medium">{user.name}</p>
               </div>
 
               <div className="space-y-1">
-                <div className="flex items-center space-x-2 text-sm text-gray-400 mb-1">
+                <div className="flex items-center space-x-2 text-sm text-gray-600 mb-1">
                   <Mail className="w-4 h-4" />
                   <span>Email Address</span>
                 </div>
-                <p className="text-white font-medium">{user.email}</p>
+                <p className="text-gray-900 font-medium">{user.email}</p>
               </div>
 
               <div className="space-y-1 md:col-span-2">
-                <div className="flex items-center space-x-2 text-sm text-gray-400 mb-1">
+                <div className="flex items-center space-x-2 text-sm text-gray-600 mb-1">
                   <Calendar className="w-4 h-4" />
                   <span>Member Since</span>
                 </div>
-                <p className="text-white font-medium">
+                <p className="text-gray-900 font-medium">
                   {new Date(user.createdAt).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
@@ -356,9 +373,9 @@ export default function ProfilePage() {
           </div>
 
           {/* Upload Guidelines */}
-          <div className="px-8 py-4 bg-blue-500/5 border-t border-blue-500/20">
-            <p className="text-xs text-gray-400">
-              <strong className="text-blue-300">Photo Guidelines:</strong> Upload JPG, PNG, WebP, or GIF files up to 5MB. Square images work best for profile pictures.
+          <div className="px-8 py-4 bg-gray-50 border-t border-gray-200">
+            <p className="text-xs text-gray-700">
+              <strong className="text-gray-900">Photo Guidelines:</strong> Upload JPG, PNG, WebP, or GIF files up to 5MB. Square images work best for profile pictures.
             </p>
           </div>
         </div>

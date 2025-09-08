@@ -55,7 +55,7 @@ export default function Hero() {
       {backgroundType === 'video' ? (
         <div className="absolute inset-0">
           <video
-            className="absolute inset-0 w-full h-full object-cover opacity-70"
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
             autoPlay
             muted
             loop
