@@ -12,16 +12,16 @@ const Input = ({ label, type, placeholder, value, onChange, error, required = fa
 
   return (
     <div className="w-full">
-      <label className="block text-sm font-medium text-white mb-2">
+      <label className="block text-sm font-medium text-gray-900 mb-2">
         {label}
-        {required && <span className="text-red-400 ml-1">*</span>}
+        {required && <span className="text-red-500 ml-1">*</span>}
       </label>
       <div className="relative">
         <input
           type={inputType}
           className={`w-full px-4 py-3 rounded-lg border ${
-            error ? 'border-red-400/50 focus:border-red-400 focus:ring-red-400/20' : 'border-purple-500/30 focus:border-purple-400 focus:ring-purple-400/20'
-          } bg-black/20 backdrop-blur-xl focus:outline-none focus:ring-2 text-white placeholder-gray-400 transition-colors`}
+            error ? 'border-red-400 focus:border-red-500 focus:ring-red-400/20' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-400/20'
+          } bg-white focus:outline-none focus:ring-2 text-gray-900 placeholder-gray-500 transition-colors`}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
@@ -33,14 +33,14 @@ const Input = ({ label, type, placeholder, value, onChange, error, required = fa
             onClick={() => setShowPassword(!showPassword)}
           >
             {showPassword ? (
-              <EyeOff className="h-5 w-5 text-gray-400" />
+              <EyeOff className="h-5 w-5 text-gray-500" />
             ) : (
-              <Eye className="h-5 w-5 text-gray-400" />
+              <Eye className="h-5 w-5 text-gray-500" />
             )}
           </button>
         )}
       </div>
-      {error && <p className="mt-1 text-sm text-red-400">{error}</p>}
+      {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
     </div>
   );
 };
@@ -51,7 +51,7 @@ const Button = ({ children, type = "button", disabled = false, loading = false, 
       type={type}
       onClick={onClick}
       disabled={disabled || loading}
-      className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center shadow-lg shadow-purple-500/25 border border-purple-400/30"
+      className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center shadow-lg shadow-blue-500/25 border border-blue-400/30"
     >
       {loading && <Loader2 className="animate-spin -ml-1 mr-2 h-4 w-4" />}
       {children}
@@ -172,22 +172,21 @@ export default function RegisterPage() {
 
   if (showSuccess) {
     return (
-      <div className="bg-black min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden flex items-center justify-center">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
+      <div className="bg-white min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden flex items-center justify-center">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+          <div className="absolute inset-0 opacity-20"></div>
         </div>
+
         <div className="w-full max-w-md relative z-10">
-          <div className="bg-black/20 backdrop-blur-xl py-8 px-6 shadow-xl border border-purple-500/30 rounded-2xl shadow-lg shadow-purple-500/10 text-center">
-            <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-white mb-2">Account Created!</h2>
-            <p className="text-gray-300 mb-4">
+          <div className="bg-white border border-gray-200 py-8 px-6 shadow-xl rounded-2xl shadow-gray-200/50 text-center">
+            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Account Created!</h2>
+            <p className="text-gray-600 mb-4">
               Your account has been successfully created. You will be redirected to the login page.
             </p>
             <div className="animate-pulse">
-              <Loader2 className="h-5 w-5 animate-spin mx-auto text-purple-400" />
+              <Loader2 className="h-5 w-5 animate-spin mx-auto text-blue-600" />
             </div>
           </div>
         </div>
@@ -196,12 +195,10 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="bg-black min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden flex items-center justify-center">
-      {/* Background Effects - matching other components */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
+    <div className="bg-white min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden flex items-center justify-center">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+        <div className="absolute inset-0 opacity-20"></div>
       </div>
 
       <div className="w-full max-w-md relative z-10">
@@ -217,22 +214,22 @@ export default function RegisterPage() {
                   e.target.nextElementSibling.style.display = 'block';
                 }}
               />
-              <Brain className="h-10 w-10 text-purple-400 hidden" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">B2W Infotech</span>
+              <Brain className="h-10 w-10 text-blue-600 hidden" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">B2W Infotech</span>
             </div>
           </div>
-          <h2 className="text-3xl font-extrabold text-white mb-3">
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-3">
             Create your account
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-600">
             Or{' '}
-            <Link href="/login" className="font-medium bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-pink-300 transition-all duration-200">
+            <Link href="/login" className="font-medium text-blue-600 hover:text-blue-800 transition-all duration-200">
               sign in to your existing account
             </Link>
           </p>
         </div>
 
-        <div className="bg-black/20 backdrop-blur-xl py-8 px-6 shadow-xl border border-purple-500/30 rounded-2xl shadow-lg shadow-purple-500/10">
+        <div className="bg-white border border-gray-200 py-8 px-6 shadow-xl rounded-2xl shadow-gray-200/50">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <Input
               label="Full Name"
@@ -280,22 +277,22 @@ export default function RegisterPage() {
                 name="terms"
                 type="checkbox"
                 required
-                className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-purple-400/30 bg-black/20 rounded mt-1"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 bg-white rounded mt-1"
               />
-              <label htmlFor="terms" className="ml-3 block text-sm text-white">
+              <label htmlFor="terms" className="ml-3 block text-sm text-gray-700">
                 I agree to the{' '}
-                <a href="#" className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-pink-300 underline">
+                <a href="#" className="text-blue-600 hover:text-blue-800 underline">
                   Terms of Service
                 </a>{' '}
                 and{' '}
-                <a href="#" className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-purple-300 hover:to-pink-300 underline">
+                <a href="#" className="text-blue-600 hover:text-blue-800 underline">
                   Privacy Policy
                 </a>
               </label>
             </div>
 
             {errors.submit && (
-              <div className="bg-red-500/10 border border-red-400/30 text-red-400 px-4 py-3 rounded-lg text-sm backdrop-blur-xl">
+              <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg text-sm">
                 {errors.submit}
               </div>
             )}

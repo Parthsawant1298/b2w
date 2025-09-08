@@ -55,13 +55,7 @@ const B2WTestimonials = () => {
   }, []);
 
   return (
-    <div className="bg-black overflow-hidden relative">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
-      </div>
+    <div className="overflow-hidden relative" style={{backgroundColor: '#FFFFFF'}}>
 
       <style jsx global>{`
         @keyframes slideIn {
@@ -88,10 +82,10 @@ const B2WTestimonials = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Success</span> Stories
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 sm:mb-4">
+              <span className="text-black">Success</span> Stories
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
               Discover how leading companies transform their business with our AI-powered development and IT outsourcing solutions
             </p>
           </div>
@@ -109,37 +103,37 @@ const B2WTestimonials = () => {
                     display: activeTestimonial === idx ? 'block' : 'none'
                   }}
                 >
-                  <div className="bg-black/20 backdrop-blur-xl p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-purple-500/30 shadow-lg shadow-purple-500/10">
+                  <div className="bg-white border border-gray-300 p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-xl">
                     <div className="mb-4 sm:mb-6 md:mb-8">
-                      <svg className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-purple-400/30" fill="currentColor" viewBox="0 0 24 24" style={{ animation: 'pulse 3s infinite' }}>
+                      <svg className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-blue-600/30" fill="currentColor" viewBox="0 0 24 24" style={{ animation: 'pulse 3s infinite' }}>
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
                       </svg>
                     </div>
                     
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-200 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-700 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
                       "{testimonial.quote}"
                     </p>
 
                     <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
                       <div className="relative group flex-shrink-0">
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full opacity-10 group-hover:opacity-20 transition-opacity" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full opacity-10 group-hover:opacity-20 transition-opacity" />
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover ring-2 sm:ring-4 ring-purple-400/50"
+                          className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover ring-2 sm:ring-4 ring-blue-400/50"
                         />
                       </div>
                       <div className="min-w-0">
-                        <h4 className="text-base sm:text-lg md:text-xl font-semibold text-white truncate">
+                        <h4 className="text-base sm:text-lg md:text-xl font-semibold text-black truncate">
                           {testimonial.name}
                         </h4>
-                        <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-1">{testimonial.role}</p>
-                        <p className="text-xs sm:text-sm text-gray-400">{testimonial.company}</p>
+                        <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-1">{testimonial.role}</p>
+                        <p className="text-xs sm:text-sm text-gray-600">{testimonial.company}</p>
                         <div className="flex gap-1 mt-1 sm:mt-2">
                           {[...Array(testimonial.rating)].map((_, i) => (
                             <svg 
                               key={i} 
-                              className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-400 fill-purple-400"
+                              className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-blue-600 fill-blue-600"
                               fill="currentColor"
                               viewBox="0 0 20 20"
                               style={{ animation: `fadeUp 0.5s ease-out ${i * 0.1}s` }}
@@ -171,21 +165,21 @@ const B2WTestimonials = () => {
                     }}
                     onClick={() => setActiveTestimonial(idx)}
                   >
-                    <div className="bg-black/20 backdrop-blur-xl p-4 lg:p-6 rounded-2xl shadow-md border border-purple-500/30 hover:border-purple-400/50 transition-all">
+                    <div className="bg-white border border-gray-300 p-4 lg:p-6 rounded-2xl shadow-md hover:border-gray-400 transition-all">
                       <div className="flex items-center gap-3 lg:gap-4 mb-3">
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-12 h-12 lg:w-14 lg:h-14 rounded-full object-cover ring-2 ring-purple-400/30 flex-shrink-0"
+                          className="w-12 h-12 lg:w-14 lg:h-14 rounded-full object-cover ring-2 ring-blue-400/30 flex-shrink-0"
                         />
                         <div className="min-w-0">
-                          <h4 className="text-sm lg:text-base font-semibold text-white truncate">{testimonial.name}</h4>
-                          <p className="text-xs lg:text-sm text-gray-300 truncate">{testimonial.company}</p>
+                          <h4 className="text-sm lg:text-base font-semibold text-black truncate">{testimonial.name}</h4>
+                          <p className="text-xs lg:text-sm text-gray-700 truncate">{testimonial.company}</p>
                         </div>
                       </div>
                       <div className="flex gap-1">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <svg key={i} className="w-3 h-3 lg:w-4 lg:h-4 text-purple-400 fill-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                          <svg key={i} className="w-3 h-3 lg:w-4 lg:h-4 text-blue-600 fill-blue-600" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                           </svg>
                         ))}
@@ -205,8 +199,8 @@ const B2WTestimonials = () => {
                 onClick={() => setActiveTestimonial(idx)}
                 className={`transition-all duration-300 ${
                   activeTestimonial === idx 
-                    ? 'w-6 sm:w-8 md:w-12 h-1 bg-gradient-to-r from-purple-400 to-pink-400' 
-                    : 'w-1 h-1 bg-gray-600 hover:bg-purple-400'
+                    ? 'w-6 sm:w-8 md:w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400' 
+                    : 'w-1 h-1 bg-gray-400 hover:bg-blue-400'
                 } rounded-full`}
               />
             ))}

@@ -4,13 +4,7 @@ import { Brain, Mail, Phone, MapPin, Linkedin, Twitter, Github, Globe } from "lu
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-purple-500/20 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
-      </div>
-
+    <footer className="bg-black border-t border-blue-500/20 relative overflow-hidden">
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16">
@@ -28,8 +22,8 @@ export default function Footer() {
                     e.target.nextElementSibling.style.display = 'block';
                   }}
                 />
-                <Brain className="h-8 w-8 text-purple-400 hidden" />
-                <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <Brain className="h-8 w-8 text-blue-600 hidden" />
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                   B2W Infotech
                 </span>
               </div>
@@ -39,33 +33,33 @@ export default function Footer() {
               </p>
               
               <div className="flex items-center space-x-2 text-sm text-gray-400">
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">1200+</span>
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-semibold">1200+</span>
                 <span>Projects Completed Worldwide</span>
               </div>
             </div>
 
             {/* Services */}
             <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-white border-b border-purple-500/30 pb-2">
-                Services
+              <h3 className="text-lg font-semibold text-white border-b border-blue-500/30 pb-2">
+                Our Services
               </h3>
               <ul className="space-y-3">
                 {[
-                  "AI-Powered Development",
-                  "Full-Stack Development", 
-                  "Mobile App Development",
-                  "Digital Transformation",
-                  "AI/ML Integration",
-                  "Custom Software Solutions",
-                  "Enterprise Architecture",
-                  "24/7 Technical Support"
+                  { name: "Web Development", href: "/services/category/web-development" },
+                  { name: "Mobile Development", href: "/services/category/mobile-development" },
+                  { name: "AI & Machine Learning", href: "/services/category/ai-machine-learning" },
+                  { name: "Cloud & DevOps", href: "/services/category/cloud-devops" },
+                  { name: "React Development", href: "/services/react-development" },
+                  { name: "Node.js Development", href: "/services/nodejs-development" },
+                  { name: "React Native Apps", href: "/services/react-native" },
+                  { name: "All Services", href: "/services" }
                 ].map((service, index) => (
                   <li key={index}>
                     <Link 
-                      href="#" 
-                      className="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm"
+                      href={service.href} 
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
                     >
-                      {service}
+                      {service.name}
                     </Link>
                   </li>
                 ))}
@@ -74,24 +68,23 @@ export default function Footer() {
 
             {/* Company */}
             <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-white border-b border-purple-500/30 pb-2">
+              <h3 className="text-lg font-semibold text-white border-b border-blue-500/30 pb-2">
                 Company
               </h3>
               <ul className="space-y-3">
                 {[
                   { name: "About Us", href: "/about" },
-                  { name: "Our Team", href: "/team" },
-                  { name: "Careers", href: "/careers" },
-                  { name: "Case Studies", href: "/case-studies" },
-                  { name: "Blog", href: "/blog" },
+                  { name: "Services", href: "/services" },
+                  { name: "Contact Us", href: "/contact" },
                   { name: "FAQ", href: "/faq" },
-                  { name: "Privacy Policy", href: "/privacy" },
-                  { name: "Terms of Service", href: "/terms" }
+                  { name: "Login", href: "/login" },
+                  { name: "Register", href: "/register" },
+                  { name: "User Profile", href: "/profile" }
                 ].map((item, index) => (
                   <li key={index}>
                     <Link 
                       href={item.href} 
-                      className="text-gray-300 hover:text-purple-400 transition-colors duration-200 text-sm"
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
                     >
                       {item.name}
                     </Link>
@@ -102,13 +95,13 @@ export default function Footer() {
 
             {/* Contact & Social */}
             <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-white border-b border-purple-500/30 pb-2">
+              <h3 className="text-lg font-semibold text-white border-b border-blue-500/30 pb-2">
                 Get In Touch
               </h3>
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <MapPin size={16} className="text-purple-400 mt-1 flex-shrink-0" />
+                  <MapPin size={16} className="text-blue-600 mt-1 flex-shrink-0" />
                   <div className="text-sm text-gray-300">
                     <p className="font-medium text-white">Global Offices</p>
                     <p>Mumbai, India</p>
@@ -118,20 +111,20 @@ export default function Footer() {
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <Mail size={16} className="text-purple-400 flex-shrink-0" />
+                  <Mail size={16} className="text-blue-600 flex-shrink-0" />
                   <a 
                     href="mailto:contact@b2winfotech.com" 
-                    className="text-sm text-gray-300 hover:text-purple-400 transition-colors duration-200"
+                    className="text-sm text-gray-300 hover:text-blue-400 transition-colors duration-200"
                   >
                     contact@b2winfotech.com
                   </a>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <Phone size={16} className="text-purple-400 flex-shrink-0" />
+                  <Phone size={16} className="text-blue-600 flex-shrink-0" />
                   <a 
                     href="tel:+1-555-B2W-TECH" 
-                    className="text-sm text-gray-300 hover:text-purple-400 transition-colors duration-200"
+                    className="text-sm text-gray-300 hover:text-blue-400 transition-colors duration-200"
                   >
                     +1 (555) B2W-TECH
                   </a>
@@ -140,23 +133,29 @@ export default function Footer() {
 
               {/* Social Links */}
               <div className="space-y-3">
-                <p className="text-sm font-medium text-white">Follow Us</p>
-                <div className="flex space-x-3">
-                  {[
-                    { icon: Linkedin, href: "#", label: "LinkedIn" },
-                    { icon: Twitter, href: "#", label: "Twitter" },
-                    { icon: Github, href: "#", label: "GitHub" },
-                    { icon: Globe, href: "#", label: "Website" }
-                  ].map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      aria-label={social.label}
-                      className="w-10 h-10 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 hover:border-purple-400/50 rounded-lg flex items-center justify-center transition-all duration-200 group"
-                    >
-                      <social.icon size={18} className="text-purple-400 group-hover:text-purple-300" />
-                    </a>
-                  ))}
+                <p className="text-sm font-medium text-white">Quick Actions</p>
+                <div className="flex flex-col space-y-2">
+                  <Link 
+                    href="/contact"
+                    className="inline-flex items-center space-x-2 text-sm text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                  >
+                    <Mail size={16} />
+                    <span>Get a Quote</span>
+                  </Link>
+                  <Link 
+                    href="/services"
+                    className="inline-flex items-center space-x-2 text-sm text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                  >
+                    <Globe size={16} />
+                    <span>Browse Services</span>
+                  </Link>
+                  <Link 
+                    href="/login"
+                    className="inline-flex items-center space-x-2 text-sm text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                  >
+                    <Linkedin size={16} />
+                    <span>Client Portal</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -164,34 +163,36 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="border-t border-purple-500/20">
+        <div className="border-t border-blue-500/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold text-white">
-                  Stay Updated with AI Development Trends
+                  Ready to Start Your Project?
                 </h3>
                 <p className="text-sm text-gray-300">
-                  Get the latest insights on AI-powered development and digital transformation.
+                  Get in touch with our experts for a free consultation and project estimate.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 lg:max-w-md lg:w-full">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-black/50 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400/50 focus:bg-black/70 transition-all duration-200"
-                />
-                <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-lg shadow-purple-500/25 border border-purple-400/30 whitespace-nowrap">
-                  Subscribe
-                </button>
+              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                <Link href="/contact">
+                  <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 shadow-lg shadow-blue-500/25 border border-blue-400/30 whitespace-nowrap">
+                    Get Free Consultation
+                  </button>
+                </Link>
+                <Link href="/services">
+                  <button className="border border-blue-500/30 hover:border-blue-400/50 text-blue-400 hover:text-blue-300 px-6 py-3 rounded-lg font-medium transition-all duration-200 whitespace-nowrap">
+                    View Our Services
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-purple-500/20">
+        <div className="border-t border-blue-500/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
               <div className="text-sm text-gray-400">

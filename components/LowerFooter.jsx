@@ -1,7 +1,38 @@
-"use client";
+"use client"
+
 import Head from 'next/head';
+import { useEffect, useState } from "react"
 
 export default function CTASection() {
+  const [backgroundType, setBackgroundType] = useState('video') // Start with video first
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  // Background images for carousel
+  const backgroundImages = [
+    'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+  ]
+
+  // Auto-change background images every 5 seconds when using image fallback
+  useEffect(() => {
+    if (backgroundType === 'image') {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => 
+          (prevIndex + 1) % backgroundImages.length
+        )
+      }, 5000)
+      return () => clearInterval(interval)
+    }
+  }, [backgroundType, backgroundImages.length])
+
+  // Handle video error - fallback to images
+  const handleVideoError = () => {
+    setBackgroundType('image')
+  }
+
   return (
     <div className="relative bg-black overflow-hidden">
       <Head>
@@ -10,31 +41,46 @@ export default function CTASection() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl"></div>
-      </div>
-      
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: "url('/images/hero.webp')",
-          backgroundSize: "cover",
-        }}
-      />
+      {/* Background Video or Image Carousel */}
+      {backgroundType === 'video' ? (
+        <div className="absolute inset-0">
+          <video
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            autoPlay
+            muted
+            loop
+            playsInline
+            onError={handleVideoError} // Fallback to images if video fails
+          >
+            <source src="/images/background.mp4" type="video/mp4" />
+          </video>
+        </div>
+      ) : (
+        <div className="absolute inset-0">
+          {backgroundImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-center bg-no-repeat transition-opacity duration-1000 ${
+                index === currentImageIndex ? 'opacity-0' : 'opacity-0'
+              }`}
+              style={{
+                backgroundImage: `url('${image}')`,
+                backgroundSize: "cover"
+              }}
+            />
+          ))}
+        </div>
+      )}
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/20 to-black/80" />
+      <div className="absolute inset-0 " />
       
       <main className="relative z-10 flex items-center justify-center px-4 py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="text-center max-w-4xl mx-auto">
          
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white leading-tight">
             Ready to Revolutionize Your <br />
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Development Process?
             </span>
           </h1>
@@ -45,7 +91,7 @@ export default function CTASection() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10 md:mb-12">
-            <button className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg shadow-purple-500/25 border border-purple-400/30">
+            <button className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 shadow-lg shadow-blue-500/25 border border-blue-400/30">
               Start AI Development
               <svg
                 className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200"
@@ -62,7 +108,7 @@ export default function CTASection() {
               </svg>
             </button>
             
-            <button className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-black/20 backdrop-blur-xl border border-purple-500/30 hover:border-purple-400/50 hover:bg-purple-500/20 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+            <button className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-black/20 backdrop-blur-xl border border-blue-500/30 hover:border-blue-400/50 hover:bg-blue-500/20 text-white text-sm sm:text-base md:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
               Get Free Consultation
               <svg
                 className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:scale-110 transition-transform duration-200"

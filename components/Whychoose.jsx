@@ -10,32 +10,36 @@ const CircularShowcase = () => {
   const showcaseItems = [
     {
       title: "AI-Powered Development",
-      description: "Revolutionary AI-driven code generation and automated testing frameworks for faster, smarter development cycles",
-      image: "/images/section-1.jpg"
+      description: "Revolutionary AI-driven code generation and automated testing frameworks for faster, more reliable software delivery.",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Full-Stack Solutions",
-      description: "End-to-end web and mobile applications with modern frameworks, cloud integration, and scalable architecture",
-      image: "/images/section-2.jpg"
+      title: "Full-Stack Expertise",
+      description: "End-to-end web and mobile application development with modern frameworks and cloud integration.",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Digital Transformation",
-      description: "Comprehensive modernization with AI integration, intelligent automation, and predictive analytics for your business",
-      image: "/images/section-3.jpg"
+      description: "Comprehensive business modernization with intelligent automation and predictive analytics integration.",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "24/7 Expert Support",
-      description: "Dedicated technical teams with white-glove service and round-the-clock assistance for seamless project delivery",
-      image: "/images/section-1.jpg"
+      description: "Round-the-clock technical support with enterprise-grade security and comprehensive managed services.",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
   const updateRadius = useCallback(() => {
     const width = window.innerWidth;
-    if (width < 640) { // mobile
+    if (width < 480) { // very small mobile
+      setRadius(120);
+    } else if (width < 640) { // mobile
       setRadius(150);
+    } else if (width < 768) { // large mobile
+      setRadius(180);
     } else if (width < 1024) { // tablet
-      setRadius(200);
+      setRadius(220);
     } else { // desktop
       setRadius(300);
     }
@@ -69,20 +73,13 @@ const CircularShowcase = () => {
   }, []);
 
   return (
-    <div className="bg-black py-16 md:py-20 overflow-hidden relative">
-      {/* Background Effects - matching your platform style */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
-      </div>
-
+    <div className="py-16 md:py-20 overflow-hidden relative" style={{backgroundColor: '#EFF9F0'}}>
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Why Choose <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">B2W Infotech?</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-4">
+            Why Choose <span className="text-black">B2W Infotech?</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-20">
+          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-20">
             Revolutionary AI-powered IT outsourcing solutions for digital transformation and full-stack development
           </p>
         </div>
@@ -109,9 +106,9 @@ const CircularShowcase = () => {
                   }}
                 >
                   <div 
-                    className="bg-black/20 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg border border-purple-500/30"
+                    className="bg-white border border-gray-300 rounded-2xl overflow-hidden shadow-lg"
                     style={{
-                      boxShadow: position === 0 ? '0 0 15px 3px rgba(147, 51, 234, 0.5)' : 'none'
+                      boxShadow: position === 0 ? '0 0 15px 3px rgba(59, 130, 246, 0.5)' : 'none'
                     }}
                   >
                     <div className="relative">
@@ -122,8 +119,8 @@ const CircularShowcase = () => {
                       />
                     </div>
                     <div className="p-4 md:p-6">
-                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">{item.title}</h3>
-                      <p className="text-sm md:text-base text-gray-300">{item.description}</p>
+                      <h3 className="text-xl md:text-2xl font-bold text-black mb-2 md:mb-3">{item.title}</h3>
+                      <p className="text-sm md:text-base text-gray-700">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -134,16 +131,16 @@ const CircularShowcase = () => {
           <button
             onClick={goToPrev}
             className="absolute left-1 md:left-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full 
-              bg-black/20 backdrop-blur-xl hover:bg-purple-500/20 transition-colors border border-purple-500/30 hover:border-purple-400/50"
+              bg-white border border-gray-300 hover:bg-gray-100 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-black" />
           </button>
           <button
             onClick={goToNext}
             className="absolute right-1 md:right-4 top-1/2 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full 
-              bg-black/20 backdrop-blur-xl hover:bg-purple-500/20 transition-colors border border-purple-500/30 hover:border-purple-400/50"
+              bg-white border border-gray-300 hover:bg-gray-100 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-black" />
           </button>
 
           <div className="absolute -bottom-8 md:-bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-2 md:gap-3">
@@ -151,10 +148,10 @@ const CircularShowcase = () => {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`transition-all duration-300 ${
+                className={`transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                   currentIndex === idx 
-                    ? 'w-8 md:w-12 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full' 
-                    : 'w-1 h-1 bg-gray-600 hover:bg-purple-400 rounded-full'
+                    ? 'w-8 md:w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full' 
+                    : 'w-1 h-1 bg-gray-400 hover:bg-blue-400 rounded-full'
                 }`}
               />
             ))}
