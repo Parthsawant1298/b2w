@@ -1,4 +1,7 @@
-import { Check } from "lucide-react"
+"use client";
+
+import React from 'react';
+import { Check } from 'lucide-react';
 
 export default function PricingPlans() {
   const plans = [
@@ -9,7 +12,7 @@ export default function PricingPlans() {
       billing: "billed yearly",
       billingNote: "or $3,499 billed monthly",
       buttonText: "Start AI Development",
-      buttonColor: "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700",
+      buttonColor: "bg-blue-800 hover:bg-blue-900",
       popular: false,
     },
     {
@@ -19,7 +22,7 @@ export default function PricingPlans() {
       billing: "billed yearly", 
       billingNote: "or $9,499 billed monthly",
       buttonText: "Start AI Development",
-      buttonColor: "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700",
+      buttonColor: "bg-blue-800 hover:bg-blue-900",
       popular: true,
     },
     {
@@ -29,7 +32,7 @@ export default function PricingPlans() {
       billing: "billed yearly",
       billingNote: "or $18,999 billed monthly",
       buttonText: "Start AI Development", 
-      buttonColor: "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700",
+      buttonColor: "bg-blue-800 hover:bg-blue-900",
       popular: false,
     },
     {
@@ -39,7 +42,7 @@ export default function PricingPlans() {
       billing: "for tailored solutions",
       billingNote: "",
       buttonText: "Get Consultation",
-      buttonColor: "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700",
+      buttonColor: "bg-blue-800 hover:bg-blue-900",
       popular: false,
     },
   ]
@@ -99,7 +102,7 @@ export default function PricingPlans() {
   ]
 
   return (
-    <div className="min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden" style={{backgroundColor: '#EFF9F0'}}>
+    <div className="min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden" style={{backgroundColor: '#ecf1f2'}}>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
@@ -114,7 +117,7 @@ export default function PricingPlans() {
 
         {/* Most Popular Badge */}
         <div className="flex justify-center mb-8">
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 sm:px-6 py-2 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-blue-500/25 border border-blue-400/30">
+          <div className="bg-blue-800 text-white px-4 sm:px-6 py-2 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-blue-500/25 border border-blue-400/30">
             MOST POPULAR
           </div>
         </div>
@@ -124,7 +127,7 @@ export default function PricingPlans() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl shadow-xl p-6 border ${plan.popular ? "border-blue-500/50 bg-gradient-to-br from-blue-500/10 to-cyan-500/10" : "border-gray-300"} shadow-lg`}
+              className={`bg-white rounded-2xl shadow-xl p-6 border ${plan.popular ? "border-blue-500/50 bg-blue-800/10" : "border-gray-300"} shadow-lg`}
             >
               <div className="text-center">
                 <h3 className={`text-xl font-bold mb-4 ${plan.popular ? "text-blue-600" : "text-black"}`}>
@@ -164,7 +167,7 @@ export default function PricingPlans() {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`p-8 text-center border-r border-gray-300 last:border-r-0 flex flex-col justify-between ${plan.popular ? "bg-gradient-to-br from-blue-500/10 to-cyan-500/10" : "bg-white"}`}
+                className={`p-8 text-center border-r border-gray-300 last:border-r-0 flex flex-col justify-between ${plan.popular ? "bg-blue-800/10" : "bg-white"}`}
               >
                 <div>
                   <h3 className={`text-xl font-bold mb-6 ${plan.popular ? "text-blue-600" : "text-black"}`}>
@@ -190,7 +193,7 @@ export default function PricingPlans() {
         {/* Features Table */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-300">
           {/* Top Features Section */}
-          <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 px-4 sm:px-8 py-4 border-b border-gray-300">
+          <div className="bg-blue-800/20 px-4 sm:px-8 py-4 border-b border-gray-300">
             <h3 className="text-lg font-bold text-black">Development Features</h3>
           </div>
 
@@ -233,7 +236,7 @@ export default function PricingPlans() {
                 key={index}
                 className="grid grid-cols-5 border-b border-gray-300 last:border-b-0 hover:bg-blue-500/10 transition-colors"
               >
-                <div className="px-8 py-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 font-medium text-black border-r border-gray-300 flex items-center">
+                <div className="px-8 py-4 bg-blue-800/10 font-medium text-black border-r border-gray-300 flex items-center">
                   <span>{feature.name}</span>
                   <div className="ml-2 w-4 h-4 rounded-full bg-blue-500/30 flex items-center justify-center">
                     <span className="text-xs text-blue-600 font-bold">?</span>
@@ -256,7 +259,7 @@ export default function PricingPlans() {
           </div>
 
           {/* Product Capabilities Section */}
-          <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 px-4 sm:px-8 py-4 border-b border-gray-300">
+          <div className="bg-blue-800/20 px-4 sm:px-8 py-4 border-b border-gray-300">
             <h3 className="text-lg font-bold text-black">Development Capabilities</h3>
           </div>
 
@@ -310,7 +313,7 @@ export default function PricingPlans() {
                 key={index}
                 className="grid grid-cols-5 border-b border-gray-300 last:border-b-0 hover:bg-blue-500/10 transition-colors"
               >
-                <div className="px-8 py-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 font-medium text-black border-r border-gray-300 flex items-center">
+                <div className="px-8 py-4 bg-blue-800/10 font-medium text-black border-r border-gray-300 flex items-center">
                   {capability.name}
                 </div>
                 <div className="px-8 py-4 text-center border-r border-gray-300 flex items-center justify-center">

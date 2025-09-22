@@ -116,7 +116,7 @@ const B2WTestimonials = () => {
 
                     <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
                       <div className="relative group flex-shrink-0">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full opacity-10 group-hover:opacity-20 transition-opacity" />
+                        <div className="absolute inset-0 bg-blue-800 rounded-full opacity-10 group-hover:opacity-20 transition-opacity" />
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
@@ -199,7 +199,7 @@ const B2WTestimonials = () => {
                 onClick={() => setActiveTestimonial(idx)}
                 className={`transition-all duration-300 ${
                   activeTestimonial === idx 
-                    ? 'w-6 sm:w-8 md:w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400' 
+                    ? 'w-6 sm:w-8 md:w-12 h-1 bg-blue-800' 
                     : 'w-1 h-1 bg-gray-400 hover:bg-blue-400'
                 } rounded-full`}
               />

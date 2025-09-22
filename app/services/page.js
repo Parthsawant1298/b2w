@@ -8,126 +8,77 @@ import Footer from "@/components/Footer"
 export default function ServicesPage() {
   // Mapping of service names to actual slugs in servicesData.js
   const serviceNameToSlug = {
-    "React Development": "react-development",
-    "Vue.js Development": "vue-development", 
-    "Angular Development": "angular-development",
-    "Next.js Development": "react-development", // Mapped to React as Next.js is React-based
-    "Node.js Development": "nodejs-development",
-    "Python Development": "python-development",
-    "PHP Development": "python-development", // Mapped to Python as similar backend
-    "Java Development": "java-development",
-    ".NET Development": "dotnet-development",
-    "iOS Development": "ios-development",
-    "Android Development": "android-development",
-    "React Native": "react-native",
-    "Flutter Development": "flutter-development",
-    "Custom AI Solutions": "custom-ai-solutions",
-    "Chatbot Development": "chatbot-development",
-    "Machine Learning": "machine-learning",
-    "AWS Development": "aws-development",
-    "DevOps Automation": "devops-automation",
-    "Digital Transformation": "digital-transformation",
+    "IT Outsourcing": "it-outsourcing",
+    "Custom Software Development": "custom-software-development",
+    "AI Strategy & Implementation": "ai-strategy-implementation",
+    "Web & Mobile Development": "web-mobile-development",
+    "MVP Development": "mvp-development",
+    "Staff Augmentation": "staff-augmentation",
+    "Legacy Modernization": "legacy-modernization",
+    "UI/UX Design": "ui-ux-design",
+    "DevOps & Automation": "devops-automation",
+    "Generative AI": "generative-ai",
+    "RPA Solutions": "rpa-solutions",
+    "Predictive Analytics": "predictive-analytics",
+    "Healthcare Solutions": "healthcare-solutions",
+    "FinTech Solutions": "fintech-solutions",
+    "Retail Solutions": "retail-solutions",
+    "Manufacturing Solutions": "manufacturing-solutions",
   }
 
   const serviceCategories = [
     {
-      name: "Web Development",
+      name: "Core Services",
       icon: Code,
       color: "blue",
-      description: "Modern web applications with cutting-edge technologies",
+      description: "Comprehensive IT outsourcing and custom software development solutions",
       services: [
-        "React Development",
-        "Vue.js Development",
-        "Angular Development",
-        "Next.js Development",
-        "Node.js Development",
-        "Python Development",
-        "PHP Development",
-        "Java Development",
-        "MERN Stack",
-        "MEAN Stack",
-        "Django + React",
-        "Laravel + Vue",
+        "IT Outsourcing",
+        "Custom Software Development",
+        "AI Strategy & Implementation",
+        "Web & Mobile Development",
+        "MVP Development",
+        "Staff Augmentation",
       ],
     },
     {
-      name: "Mobile Development",
-      icon: Smartphone,
-      color: "cyan",
-      description: "Native and cross-platform mobile applications",
-      services: [
-        "iOS Development",
-        "Android Development",
-        "Swift Development",
-        "Kotlin Development",
-        "React Native",
-        "Flutter Development",
-        "Ionic Development",
-        "Xamarin Development",
-      ],
-    },
-    {
-      name: "AI & Machine Learning",
+      name: "AI & Automation",
       icon: Brain,
-      color: "blue",
-      description: "Intelligent solutions powered by artificial intelligence",
-      services: [
-        "Custom AI Solutions",
-        "Chatbot Development",
-        "AI Model Training",
-        "Natural Language Processing",
-        "Predictive Analytics",
-        "Computer Vision",
-        "Deep Learning",
-        "ML Operations",
-      ],
-    },
-    {
-      name: "Cloud & DevOps",
-      icon: Cloud,
       color: "cyan",
-      description: "Scalable cloud infrastructure and automated deployment",
+      description: "Cutting-edge AI solutions and intelligent automation technologies",
       services: [
-        "AWS Development",
-        "Azure Development",
-        "Google Cloud",
-        "Cloud Migration",
-        "CI/CD Pipeline",
-        "Docker & Kubernetes",
-        "Infrastructure as Code",
-        "Monitoring & Analytics",
+        "Generative AI",
+        "RPA Solutions",
+        "Predictive Analytics",
+        "DevOps & Automation",
+        "Legacy Modernization",
+        "UI/UX Design",
       ],
     },
     {
-      name: "Enterprise Solutions",
+      name: "Industry Solutions",
       icon: Building2,
       color: "blue",
-      description: "Comprehensive enterprise software and digital transformation",
+      description: "Specialized software solutions for specific industry verticals",
       services: [
-        "ERP Development",
-        "CRM Solutions",
-        "Digital Transformation",
-        "Legacy Modernization",
-        "Business Intelligence",
-        "Data Warehousing",
-        "Big Data Solutions",
-        "Analytics Platforms",
+        "Healthcare Solutions",
+        "FinTech Solutions",
+        "Retail Solutions",
+        "Manufacturing Solutions",
       ],
     },
     {
-      name: "Security & Support",
-      icon: Shield,
+      name: "Digital Transformation",
+      icon: Cloud,
       color: "cyan",
-      description: "Robust security solutions and 24/7 technical support",
+      description: "End-to-end digital transformation and modernization services",
       services: [
-        "Cybersecurity Solutions",
-        "Penetration Testing",
-        "Security Auditing",
-        "Compliance Solutions",
-        "24/7 Technical Support",
-        "Maintenance Services",
-        "Performance Optimization",
-        "Managed Services",
+        "Legacy System Migration",
+        "Cloud Migration",
+        "Process Automation",
+        "Data Analytics",
+        "API Integration",
+        "Microservices Architecture",
       ],
     },
   ]
@@ -193,19 +144,17 @@ export default function ServicesPage() {
                   </div>
 
                   <Link href={`/services/category/${
-                    category.name === "Web Development" ? "web-development" :
-                    category.name === "Mobile Development" ? "mobile-development" :
-                    category.name === "AI & Machine Learning" ? "ai-machine-learning" :
-                    category.name === "Cloud & DevOps" ? "cloud-devops" :
-                    category.name === "Enterprise Solutions" ? "enterprise-solutions" :
-                    category.name === "Security & Support" ? "security-support" :
-                    "web-development" // fallback
+                    category.name === "Core Services" ? "core-services" :
+                    category.name === "AI & Automation" ? "ai-automation" :
+                    category.name === "Industry Solutions" ? "industry-solutions" :
+                    category.name === "Digital Transformation" ? "digital-transformation" :
+                    "core-services" // fallback
                   }`}>
                     <button
                       className={`w-full ${
                         category.color === "cyan"
-                          ? "bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700"
-                          : "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
+                          ? "bg-blue-800 hover:bg-blue-900"
+                          : "bg-blue-800 hover:bg-blue-900"
                       } text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg border border-blue-400/30`}
                     >
                       Explore {category.name}
@@ -223,18 +172,17 @@ export default function ServicesPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6">
             Ready to{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Transform</span>{" "}
+            <span className="text-blue-800">Transform</span>{" "}
             Your Business?
           </h2>
 
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            Join 1200+ companies worldwide who trust us with their digital transformation. Let's discuss how our
-            AI-powered solutions can accelerate your growth.
+            Join 1200+ companies worldwide who have transformed their businesses with B2W Infotech's AI-powered development solutions. With 15+ years of experience and ISO certifications, we deliver exceptional results across all industries.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/25 border border-blue-400/30 text-lg">
+              <button className="bg-blue-800 hover:bg-blue-900 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/25 border border-blue-400/30 text-lg">
                 Start Your Project Today
               </button>
             </Link>

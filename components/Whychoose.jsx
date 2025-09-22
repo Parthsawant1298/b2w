@@ -73,11 +73,11 @@ const CircularShowcase = () => {
   }, []);
 
   return (
-    <div className="py-16 md:py-20 overflow-hidden relative" style={{backgroundColor: '#EFF9F0'}}>
+    <div className="py-16 md:py-20 overflow-hidden relative" style={{backgroundColor: '#ecf1f2'}}>
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-black mb-4">
-            Why Choose <span className="text-black">B2W Infotech?</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
+            Why Choose <span className="text-blue-800">B2W Infotech?</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-20">
             Revolutionary AI-powered IT outsourcing solutions for digital transformation and full-stack development
@@ -107,9 +107,6 @@ const CircularShowcase = () => {
                 >
                   <div 
                     className="bg-white border border-gray-300 rounded-2xl overflow-hidden shadow-lg"
-                    style={{
-                      boxShadow: position === 0 ? '0 0 15px 3px rgba(59, 130, 246, 0.5)' : 'none'
-                    }}
                   >
                     <div className="relative">
                       <img
@@ -150,7 +147,7 @@ const CircularShowcase = () => {
                 onClick={() => setCurrentIndex(idx)}
                 className={`transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                   currentIndex === idx 
-                    ? 'w-8 md:w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full' 
+                    ? 'w-8 md:w-12 h-1 bg-blue-800 rounded-full' 
                     : 'w-1 h-1 bg-gray-400 hover:bg-blue-400 rounded-full'
                 }`}
               />

@@ -4,35 +4,27 @@ import { useState, useEffect } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
 export default function FAQPage() {
-  const [backgroundType, setBackgroundType] = useState('video') // Start with video first
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [openFaq, setOpenFaq] = useState(null)
 
   // Background images for carousel
   const backgroundImages = [
     'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+  
     'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
     'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
   ]
 
-  // Auto-change background images every 5 seconds when using image fallback
+  // Auto-change background images every 5 seconds
   useEffect(() => {
-    if (backgroundType === 'image') {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => 
-          (prevIndex + 1) % backgroundImages.length
-        )
-      }, 5000)
-      return () => clearInterval(interval)
-    }
-  }, [backgroundType, backgroundImages.length])
-
-  // Handle video error - fallback to images
-  const handleVideoError = () => {
-    setBackgroundType('image')
-  }
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % backgroundImages.length
+      )
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [backgroundImages.length])
 
   const faqs = [
     {
@@ -125,8 +117,8 @@ export default function FAQPage() {
           className="w-full px-4 sm:px-6 py-5 sm:py-6 flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset min-h-[60px] sm:min-h-[70px]"
         >
           <div className="flex items-start gap-3 sm:gap-4 flex-1">
-            <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mt-1">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-blue-800 rounded-full flex items-center justify-center mt-1">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
                 <path
                   fillRule="evenodd"
                   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
@@ -162,43 +154,28 @@ export default function FAQPage() {
     <div className="min-h-screen relative overflow-hidden" style={{backgroundColor: '#FFFFFF'}}>
       {/* Hero Section */}
       <section className="relative h-[350px] sm:h-[400px] md:h-[450px] lg:h-[625px] overflow-hidden pt-16 sm:pt-20 md:pt-16">
-        {/* Background Video or Image Carousel */}
-        {backgroundType === 'video' ? (
-          <div className="absolute inset-0 z-0">
-            <video
-              className="absolute inset-0 w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              onError={handleVideoError}
-            >
-              <source src="/images/background.mp4" type="video/mp4" />
-            </video>
-          </div>
-        ) : (
-          <div className="absolute inset-0 z-0">
-            {backgroundImages.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 bg-center bg-no-repeat transition-opacity duration-1000 ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{
-                  backgroundImage: `url('${image}')`,
-                  backgroundSize: "cover"
-                }}
-              />
-            ))}
-          </div>
-        )}
+        {/* Background Image Carousel */}
+        <div className="absolute inset-0 z-0">
+          {backgroundImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-center bg-no-repeat transition-opacity duration-1000 ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{
+                backgroundImage: `url('${image}')`,
+                backgroundSize: "cover"
+              }}
+            />
+          ))}
+        </div>
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="container mx-auto px-4 sm:px-6 relative z-20 h-full">
-          <div className="flex flex-col items-center justify-center h-full">
+        <div className="container mx-auto px-4 sm:px-6 relative z-20 h-full flex items-center justify-center">
+          <div className="text-center w-full">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-white text-center">
               FAQ &
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">
+              <span className="text-white">
                 SUPPORT
               </span>
             </h1>
@@ -213,7 +190,7 @@ export default function FAQPage() {
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 sm:mb-6">
               Frequently Asked
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500"> Questions</span>
+              <span className="text-black"> Questions</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
               Get answers to common questions about our AI-powered development, full-stack solutions, digital transformation, and comprehensive IT outsourcing services.
@@ -247,7 +224,7 @@ export default function FAQPage() {
                 Can't find the answer you're looking for? Our AI development experts are here to help you get the most out of our revolutionary IT outsourcing platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base">
+                <button className="bg-blue-800 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-blue-900 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base">
                   Start AI Development
                 </button>
                 <button className="bg-gray-100 text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold border-2 border-blue-500 hover:bg-blue-50 hover:border-blue-400 transform hover:scale-105 transition-all duration-200 text-sm sm:text-base">

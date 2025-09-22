@@ -18,7 +18,7 @@ const InlineButton = ({ href, onClick, className = "", children }) => {
 
 // Check icon component
 const CheckIcon = () => (
-  <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+  <div className="w-5 h-5 rounded-full bg-blue-800 flex items-center justify-center flex-shrink-0">
     <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
@@ -60,7 +60,7 @@ const Collaboration = () => {
           {/* Left Content Section */}
           <div className="max-w-full lg:max-w-[34rem] flex-shrink-0 mb-8 sm:mb-10 lg:mb-0 text-center lg:text-left">
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-6 sm:mb-8 md:mb-12 leading-tight text-black">
-              Platform for <span className="text-black">AI-Powered Development</span> Excellence
+              Platform for <span className="text-black">AI-Powered Development</span> <span className="text-blue-800">Excellence</span>
             </h2>
 
             <ul className="mb-6 sm:mb-8 md:mb-12 space-y-3 sm:space-y-4">
@@ -77,12 +77,9 @@ const Collaboration = () => {
               <InlineButton
                 className="
                   w-auto 
-                  bg-gradient-to-r
-                  from-blue-600
-                  to-cyan-600
+                  bg-blue-800
                   text-white
-                  hover:from-blue-700
-                  hover:to-cyan-700
+                  hover:bg-blue-900
                   border-none
                   shadow-lg
                   shadow-blue-500/25
@@ -106,13 +103,15 @@ const Collaboration = () => {
 
             {/* Circular Integration Diagram */}
             <div className="relative mx-auto flex w-[14rem] sm:w-[16rem] md:w-[18rem] lg:w-[20rem] xl:w-[22rem] aspect-square border border-gray-300 rounded-full mt-8 lg:mt-0">
-              {/* Central Brain Symbol */}
+              {/* Central Logo */}
               <div className="flex w-36 sm:w-40 md:w-44 lg:w-48 xl:w-52 aspect-square m-auto border border-gray-300 rounded-full">
-                <div className="w-12 sm:w-14 md:w-16 lg:w-20 xl:w-24 aspect-square m-auto bg-gradient-to-r from-blue-600 to-cyan-600 p-0.5 rounded-full">
-                  <div className="flex items-center justify-center w-full h-full bg-white rounded-full">
-                    <div className="text-center">
-                      <span className="text-[8px] sm:text-[10px] md:text-xs font-bold text-black">B2W AI</span>
-                    </div>
+                <div className="w-12 sm:w-14 md:w-16 lg:w-20 xl:w-24 aspect-square m-auto bg-blue-800 p-0.5 rounded-full animate-pulse-glow">
+                  <div className="flex items-center justify-center w-full h-full bg-white rounded-full overflow-hidden">
+                    <img
+                      src="/images/logo.jpg"
+                      alt="B2W Infotech Logo"
+                      className="w-full h-full object-cover rounded-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -168,8 +167,23 @@ const Collaboration = () => {
           }
         }
 
+        @keyframes pulse-glow {
+          0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+          }
+          50% {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+          }
+        }
+
         .animate-spin-slow {
           animation: spin-slow 20s linear infinite;
+        }
+
+        .animate-pulse-glow {
+          animation: pulse-glow 2s ease-in-out infinite;
         }
       `}</style>
     </div>

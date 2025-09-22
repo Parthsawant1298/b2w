@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 
-export default function ContactPage() {
+export default function ContactSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [formData, setFormData] = useState({
     firstName: "",
@@ -16,7 +16,7 @@ export default function ContactPage() {
   // Background images for carousel
   const backgroundImages = [
     'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-   
+  
     'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
     'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
@@ -49,37 +49,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen relative overflow-hidden" style={{backgroundColor: '#FFFFFF'}}>
 
-      {/* Hero Section */}
-      <section className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[625px] overflow-hidden pt-16 sm:pt-20 md:pt-16">
-        {/* Background Image Carousel */}
-        <div className="absolute inset-0 z-0">
-          {backgroundImages.map((image, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 bg-center bg-no-repeat transition-opacity duration-1000 ${
-                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{
-                backgroundImage: `url('${image}')`,
-                backgroundSize: "cover"
-              }}
-            />
-          ))}
-        </div>
-        <div className="absolute inset-0 bg-black/40" />
-
-        <div className="container mx-auto px-4 sm:px-6 relative z-20 h-full flex items-center justify-center">
-          <div className="text-center w-full">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-white text-center">
-              CONTACT 
-              <span className="text-white">
-                US
-              </span>
-            </h1>
-            
-          </div>
-        </div>
-      </section>
+     
+   
 
       {/* Main Contact Section */}
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16 relative z-10">

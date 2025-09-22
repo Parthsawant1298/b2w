@@ -51,7 +51,7 @@ const Button = ({ children, type = "button", disabled = false, loading = false, 
       type={type}
       onClick={onClick}
       disabled={disabled || loading}
-      className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center shadow-lg shadow-blue-500/25 border border-blue-400/30"
+      className="w-full bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center justify-center shadow-lg shadow-blue-500/25 border border-blue-400/30"
     >
       {loading && <Loader2 className="animate-spin -ml-1 mr-2 h-4 w-4" />}
       {children}
@@ -215,7 +215,7 @@ export default function RegisterPage() {
                 }}
               />
               <Brain className="h-10 w-10 text-blue-600 hidden" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">B2W Infotech</span>
+              <span className="text-2xl font-bold text-blue-800">B2W Infotech</span>
             </div>
           </div>
           <h2 className="text-3xl font-extrabold text-gray-900 mb-3">

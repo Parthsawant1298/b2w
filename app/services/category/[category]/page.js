@@ -53,7 +53,7 @@ export default function CategoryPage() {
             <h1 className="text-4xl font-bold text-black mb-4">Category Not Found</h1>
             <p className="text-gray-700 mb-8">The service category you're looking for doesn't exist.</p>
             <Link href="/services">
-              <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+              <button className="bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-900 transition-all duration-200">
                 View All Services
               </button>
             </Link>
@@ -143,10 +143,7 @@ export default function CategoryPage() {
                         )}
                       </div>
 
-                      <div className="flex items-center justify-between">
-                        <div className="text-sm text-gray-500">
-                          Starting from <span className="font-semibold text-blue-600">{service.pricing?.starter?.price || "Custom Quote"}</span>
-                        </div>
+                      <div className="flex items-center justify-end">
                         <div className="flex items-center text-blue-600 font-medium text-sm">
                           Learn More <ChevronRight size={16} className="ml-1" />
                         </div>
@@ -161,7 +158,7 @@ export default function CategoryPage() {
               <div className="text-center py-16">
                 <p className="text-gray-500 text-lg">No services found in this category.</p>
                 <Link href="/services">
-                  <button className="mt-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+                  <button className="mt-4 bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200">
                     View All Services
                   </button>
                 </Link>
@@ -183,7 +180,7 @@ export default function CategoryPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/25 border border-blue-400/30 text-lg">
+                <button className="bg-blue-800 hover:bg-blue-900 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 shadow-lg shadow-blue-500/25 border border-blue-400/30 text-lg">
                   Start Your Project Today
                 </button>
               </Link>

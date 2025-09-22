@@ -62,45 +62,39 @@ const Header = () => {
       hasDropdown: true,
       categories: [
         {
-          name: "Web Development",
+          name: "Core Services",
           services: [
-            { name: "React Development", slug: "react-development" },
-            { name: "Vue.js Development", slug: "vue-development" },
-            { name: "Angular Development", slug: "angular-development" },
-            { name: "Node.js Development", slug: "nodejs-development" },
-            { name: "Python Development", slug: "python-development" },
-            { name: "Java Development", slug: "java-development" },
-            { name: ".NET Development", slug: "dotnet-development" },
+            { name: "IT Outsourcing", slug: "it-outsourcing" },
+            { name: "Custom Software Development", slug: "custom-software-development" },
+            { name: "AI Strategy & Implementation", slug: "ai-strategy-implementation" },
+            { name: "Web & Mobile Development", slug: "web-mobile-development" },
           ]
         },
         {
-          name: "Mobile Development",
+          name: "Specialized Solutions",
           services: [
-            { name: "React Native", slug: "react-native" },
-            { name: "Flutter Development", slug: "flutter-development" },
-            { name: "iOS Development", slug: "ios-development" },
-            { name: "Android Development", slug: "android-development" },
+            { name: "MVP Development", slug: "mvp-development" },
+            { name: "Staff Augmentation", slug: "staff-augmentation" },
+            { name: "Legacy Modernization", slug: "legacy-modernization" },
+            { name: "UI/UX Design", slug: "ui-ux-design" },
           ]
         },
         {
-          name: "AI & Machine Learning",
+          name: "AI & Automation",
           services: [
-            { name: "Custom AI Solutions", slug: "custom-ai-solutions" },
-            { name: "Machine Learning", slug: "machine-learning" },
-            { name: "Chatbot Development", slug: "chatbot-development" },
+            { name: "DevOps & Automation", slug: "devops-automation" },
+            { name: "Generative AI", slug: "generative-ai" },
+            { name: "RPA Solutions", slug: "rpa-solutions" },
+            { name: "Predictive Analytics", slug: "predictive-analytics" },
           ]
         },
         {
-          name: "Cloud & DevOps",
+          name: "Industry Solutions",
           services: [
-            { name: "AWS Development", slug: "aws-development" },
-            { name: "DevOps Automation", slug: "devops-automation" },
-          ]
-        },
-        {
-          name: "Digital Transformation",
-          services: [
-            { name: "Digital Transformation", slug: "digital-transformation" },
+            { name: "Healthcare Solutions", slug: "healthcare-solutions" },
+            { name: "FinTech Solutions", slug: "fintech-solutions" },
+            { name: "Retail Solutions", slug: "retail-solutions" },
+            { name: "Manufacturing Solutions", slug: "manufacturing-solutions" },
           ]
         }
       ],
@@ -273,14 +267,42 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="fixed top-2 sm:top-4 left-2 sm:left-4 right-2 sm:right-4 z-50 bg-white/95 backdrop-blur-xl border border-gray-200 shadow-lg shadow-gray-500/10 rounded-2xl sm:rounded-3xl lg:rounded-4xl"
+      className="sticky top-0 z-50"
+      style={{
+        backgroundColor: '#FFFFFF',
+        borderBottom: '1px solid #D9D9D9'
+      }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex justify-between items-center h-12 sm:h-14 md:h-16">
+      {/* Top contact bar */}
+      <div 
+        className="py-2 px-4"
+        style={{
+          backgroundColor: '#1e40af',
+          color: '#FFFFFF'
+        }}
+      >
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm gap-2 sm:gap-0">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span>📞 +91 7798001001</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-1 sm:gap-2">
+              <span>✉️ b2winfotek@gmail.com</span>
+            </div>
+          </div>
+          <div className="text-center sm:text-right">
+            <span>🏆 15+ Years • 1200+ Projects • ISO Certified • AI-Powered Solutions</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main navigation */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-4">
+        <div className="flex justify-between items-center">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 sm:gap-3 text-lg sm:text-xl font-bold"
+            className="flex items-center gap-2 sm:gap-3"
             onClick={() => {
               setIsMobileMenuOpen(false)
               setIsServicesDropdownOpen(false)
@@ -288,18 +310,29 @@ const Header = () => {
             }}
           >
             <img
-              src="/images/logo.png"
+              src="/images/logo.jpg"
               alt="B2W Infotech Logo"
-              className="h-8 w-8 object-contain"
+              className="h-12 w-12 object-contain"
               onError={(e) => {
                 e.target.style.display = "none"
                 e.target.nextElementSibling.style.display = "block"
               }}
             />
             <Brain className="h-7 w-7 text-blue-600 hidden" />
-            <span className="text-gray-900 font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              B2W Infotech
-            </span>
+            <div>
+              <h1 
+                className="text-xl font-bold"
+                style={{ color: '#000000' }}
+              >
+                B2W Infotech
+              </h1>
+              <p 
+                className="text-sm"
+                style={{ color: '#6B7280' }}
+              >
+                AI-Powered Software Development
+              </p>
+            </div>
           </Link>
 
           {/* Desktop Navigation - Fixed positioning */}
@@ -315,12 +348,12 @@ const Header = () => {
                       onMouseLeave={handleServicesMouseLeave}
                     >
                       <button
-                        className={`py-2 px-3 font-medium rounded-md relative transition-colors duration-200 text-gray-700 hover:text-blue-600 flex items-center gap-1
-                         after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-600 after:to-cyan-600
-                         after:transition-all after:duration-300 after:transform after:-translate-x-1/2
-                         hover:after:w-3/4 ${
-                           pathname.startsWith("/services") ? "text-blue-600 after:w-3/4" : ""
+                        className={`py-2 px-3 font-medium rounded-md relative transition-colors duration-200 flex items-center gap-1 ${
+                           pathname.startsWith("/services") ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
                          } ${isServicesDropdownOpen ? "text-blue-600" : ""}`}
+                        style={{ color: pathname.startsWith("/services") || isServicesDropdownOpen ? '#1e40af' : '#000000' }}
+                        onMouseEnter={(e) => e.target.style.color = '#1e40af'}
+                        onMouseLeave={(e) => e.target.style.color = pathname.startsWith("/services") || isServicesDropdownOpen ? '#1e40af' : '#000000'}
                         onClick={() => router.push("/services")}
                       >
                         {item.name}
@@ -409,10 +442,12 @@ const Header = () => {
                   ) : (
                     <Link
                       href={item.path}
-                      className={`py-2 px-3 font-medium rounded-md relative transition-colors duration-200 text-gray-700 hover:text-blue-600
-                       after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-600 after:to-cyan-600
-                       after:transition-all after:duration-300 after:transform after:-translate-x-1/2
-                       hover:after:w-3/4 ${pathname === item.path ? "text-blue-600 after:w-3/4" : ""}`}
+                      className={`py-2 px-3 font-medium rounded-md relative transition-colors duration-200 ${
+                        pathname === item.path ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
+                      }`}
+                      style={{ color: pathname === item.path ? '#1e40af' : '#000000' }}
+                      onMouseEnter={(e) => e.target.style.color = '#1e40af'}
+                      onMouseLeave={(e) => e.target.style.color = pathname === item.path ? '#1e40af' : '#000000'}
                     >
                       {item.name}
                     </Link>
@@ -436,7 +471,7 @@ const Header = () => {
                     aria-expanded={isProfileMenuOpen}
                     aria-haspopup="true"
                   >
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-400/20 to-cyan-400/20 border-2 border-blue-400/50 overflow-hidden flex items-center justify-center group-hover:border-blue-300 transition-colors">
+                    <div className="w-10 h-10 rounded-full bg-blue-800/20 border-2 border-blue-400/50 overflow-hidden flex items-center justify-center group-hover:border-blue-300 transition-colors">
                       {user.profilePicture ? (
                         <img
                           src={user.profilePicture || "/placeholder.svg"}
@@ -488,7 +523,16 @@ const Header = () => {
             ) : (
               /* Unauthenticated Login Button - Desktop */
               <Link href="/login" className="hidden lg:block">
-                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2.5 rounded-full font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 shadow-lg shadow-blue-500/25 border border-blue-400/30">
+                <button 
+                  className="px-4 py-2 rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
+                  style={{
+                    backgroundColor: '#1e40af',
+                    color: '#FFFFFF',
+                    boxShadow: '0 0 0 2px #1e40af'
+                  }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#1d4ed8'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#1e40af'}
+                >
                   Login
                 </button>
               </Link>
@@ -498,24 +542,21 @@ const Header = () => {
             <button
               className="lg:hidden text-gray-700 hover:text-blue-600 p-2 rounded-md transition-colors"
               onClick={toggleMobileMenu}
+              style={{ color: '#000000' }}
             >
-              <div className="space-y-1.5 w-6">
-                <span
-                  className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-                    isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                  }`}
-                />
-                <span
-                  className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-                    isMobileMenuOpen ? "opacity-0" : "opacity-100"
-                  }`}
-                />
-                <span
-                  className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-                    isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                  }`}
-                />
-              </div>
+              {isMobileMenuOpen ? (
+                <div className="space-y-1.5 w-6">
+                  <span className="block w-6 h-0.5 bg-gray-700 rotate-45 translate-y-2 transition-all duration-300" />
+                  <span className="block w-6 h-0.5 bg-gray-700 opacity-0 transition-all duration-300" />
+                  <span className="block w-6 h-0.5 bg-gray-700 -rotate-45 -translate-y-2 transition-all duration-300" />
+                </div>
+              ) : (
+                <div className="space-y-1.5 w-6">
+                  <span className="block w-6 h-0.5 bg-gray-700 transition-all duration-300" />
+                  <span className="block w-6 h-0.5 bg-gray-700 transition-all duration-300" />
+                  <span className="block w-6 h-0.5 bg-gray-700 transition-all duration-300" />
+                </div>
+              )}
             </button>
           </div>
         </div>
@@ -525,8 +566,11 @@ const Header = () => {
           className={`mobile-menu-container lg:hidden overflow-hidden transition-all duration-300 ${
             isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           }`}
+          style={{
+            borderTop: '1px solid #D9D9D9'
+          }}
         >
-          <div className="py-4 space-y-1 border-t border-gray-200 rounded-b-2xl">
+          <div className="py-4 space-y-1">
             {navItems.map((item) => (
               <div key={item.name}>
                 {item.hasDropdown ? (
@@ -536,6 +580,9 @@ const Header = () => {
                       className={`block text-center py-3 px-4 mx-4 text-lg font-medium rounded-lg relative transition-colors duration-200 ${
                         pathname.startsWith("/services") ? "active-link" : ""
                       }`}
+                      style={{ color: pathname.startsWith("/services") ? '#1e40af' : '#000000' }}
+                      onMouseEnter={(e) => e.target.style.color = '#1e40af'}
+                      onMouseLeave={(e) => e.target.style.color = pathname.startsWith("/services") ? '#1e40af' : '#000000'}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -548,6 +595,9 @@ const Header = () => {
                     className={`block text-center py-3 px-4 mx-4 text-lg font-medium rounded-lg relative transition-colors duration-200 ${
                       pathname === item.path ? "active-link" : ""
                     }`}
+                    style={{ color: pathname === item.path ? '#1e40af' : '#000000' }}
+                    onMouseEnter={(e) => e.target.style.color = '#1e40af'}
+                    onMouseLeave={(e) => e.target.style.color = pathname === item.path ? '#1e40af' : '#000000'}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -564,7 +614,7 @@ const Header = () => {
             ) : user ? (
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <div className="flex items-center space-x-3 mb-6 px-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400/20 to-cyan-400/20 border-2 border-blue-400/50 overflow-hidden flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-blue-800/20 border-2 border-blue-400/50 overflow-hidden flex items-center justify-center">
                     {user.profilePicture ? (
                       <img
                         src={user.profilePicture || "/placeholder.svg"}
@@ -607,7 +657,15 @@ const Header = () => {
               /* Unauthenticated Login Button - Mobile */
               <div className="flex justify-center pt-2 pb-2">
                 <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>
-                  <button className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-lg font-medium min-w-[140px] hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 shadow-lg shadow-blue-500/25 border border-blue-400/30">
+                  <button 
+                    className="px-8 py-3 rounded-lg font-medium min-w-[140px] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2"
+                    style={{
+                      backgroundColor: '#1e40af',
+                      color: '#FFFFFF'
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#1d4ed8'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#1e40af'}
+                  >
                     Login
                   </button>
                 </Link>

@@ -9,6 +9,9 @@ import Footer from "@/components/Footer";
 import Collaboration from "@/components/Collaboration";
 import WhyChoose from "@/components/Whychoose";
 import Services from "@/components/Services";
+import Client from "@/components/Client";
+import FaqSection from "@/components/FaqSection";
+import ContactSection from "@/components/ContactSection";
 export default function Home() {
   return (
     <main>
@@ -20,8 +23,10 @@ export default function Home() {
        <WhyChoose />
       <Collaboration />
      
-      <Pricing />
+      <Client />
       <Testimonials />
+      <FaqSection />
+      <ContactSection />
       <LowerSection />
       <Footer />
     </main>

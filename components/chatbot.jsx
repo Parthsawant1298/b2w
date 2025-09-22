@@ -248,7 +248,7 @@ Always end responses by asking how we can specifically help with their IT or bus
           aria-label="Open chat"
         >
           <MessageSquare size={22} />
-          <div className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full border-2 border-black"></div>
+          <div className="absolute top-0 right-0 w-3 h-3 bg-blue-800 rounded-full border-2 border-black"></div>
         </button>
       )}
 
@@ -257,7 +257,7 @@ Always end responses by asking how we can specifically help with their IT or bus
         <div className="flex flex-col w-80 sm:w-96 h-[500px] bg-black/95 backdrop-blur-xl rounded-lg shadow-xl border border-blue-500/30 overflow-hidden relative">
           {/* Stars effect - simplified */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-cyan-600/10"></div>
+            <div className="absolute inset-0 bg-blue-800/10"></div>
           </div>
           
           {/* Header */}
@@ -266,7 +266,7 @@ Always end responses by asking how we can specifically help with their IT or bus
             onMouseDown={handleMouseDown}
           >
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mr-2 shadow-lg shadow-blue-500/50"></div>
+              <div className="w-3 h-3 bg-blue-800 rounded-full mr-2 shadow-lg shadow-blue-500/50"></div>
               <h3 className="text-blue-400 font-medium text-sm">B2W Infotech AI Assistant</h3>
             </div>
             <div className="flex items-center space-x-2">
@@ -325,7 +325,7 @@ Always end responses by asking how we can specifically help with their IT or bus
               <button
                 onClick={handleSubmit}
                 disabled={isLoading || !input.trim()}
-                className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg w-10 h-10 flex items-center justify-center hover:from-blue-700 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-blue-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg shadow-blue-500/25"
+                className="bg-blue-800 text-white rounded-lg w-10 h-10 flex items-center justify-center hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg shadow-blue-500/25"
               >
                 <SendIcon />
               </button>
