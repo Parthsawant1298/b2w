@@ -206,7 +206,7 @@ export default function RegisterPage() {
           <div className="flex justify-center mb-6">
             <div className="flex items-center gap-3">
               <img 
-                src="/images/logo.png" 
+                src="/images/logo.jpg" 
                 alt="B2W Infotech Logo" 
                 className="h-10 w-10 object-contain"
                 onError={(e) => {

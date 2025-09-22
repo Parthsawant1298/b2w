@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image"
+import Link from "next/link"
 import { useState, useEffect, useRef } from "react"
 
 export default function About() {
@@ -80,12 +81,16 @@ export default function About() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2">
-              <button className="bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-sm sm:text-base w-full sm:w-auto shadow-lg shadow-blue-500/25 border border-blue-400/30 hover:shadow-xl hover:-translate-y-1">
-                Start AI Development
-              </button>
-              <button className="border border-gray-400 hover:border-gray-500 hover:bg-gray-100 text-gray-700 hover:text-black font-semibold py-3 px-8 rounded-lg transition-all duration-200 bg-white text-sm sm:text-base w-full sm:w-auto hover:shadow-lg hover:-translate-y-1">
-                Get Free Consultation
-              </button>
+              <Link href="/services">
+                <button className="bg-blue-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-sm sm:text-base w-full sm:w-auto shadow-lg shadow-blue-500/25 border border-blue-400/30 hover:shadow-xl hover:-translate-y-1">
+                  Start AI Development
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="border border-gray-400 hover:border-gray-500 hover:bg-gray-100 text-gray-700 hover:text-black font-semibold py-3 px-8 rounded-lg transition-all duration-200 bg-white text-sm sm:text-base w-full sm:w-auto hover:shadow-lg hover:-translate-y-1">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>
           </div>
         </div>
